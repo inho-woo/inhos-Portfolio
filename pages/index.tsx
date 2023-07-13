@@ -5,7 +5,7 @@ import { Box, LinkOverlay, Select } from "@chakra-ui/react";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout>  
       <Head>
       </Head>
       <div className="flex min-h-screen flex-col items-center justify-center  body-font">
