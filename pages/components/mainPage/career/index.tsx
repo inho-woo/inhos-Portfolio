@@ -1,15 +1,12 @@
 import Layout from "../../layout";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Card } from "@chakra-ui/react";
 import { TOKEN, DATABASE_ID } from "../../../../config";
 import React from "react";
 import CardItem from "./careerItem"
 import {CareerInterface} from "./career"
 
-
 const career = ({ projects }: { projects: CareerInterface.Project }) => {
-  const Title = projects.results.map(
-    (item: CareerInterface.ProjectResult) => item.properties.Project.title[0].plain_text
-  );
+  
   return (
     <Layout>
       <Box className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
@@ -17,10 +14,11 @@ const career = ({ projects }: { projects: CareerInterface.Project }) => {
           총 프로젝트 : {projects.results.length}
           <Box as="span" className="pl-4 text-blue-500"></Box>
         </Heading>
+        <Box className="grid grid-cols-3 gap-10 p-16 m-4 md:grid-cols-3">
         {projects.results.map((projects) => (
-            <CardItem  key={projects.id} data={projects}/>
+            <CardItem key={projects.id} data={projects}/>
         ))}
-        
+        </Box>
       </Box>
     </Layout>
   );
@@ -36,6 +34,12 @@ export async function getServerSideProps() {
       Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify({
+      sorts: [
+        {
+            "property": "Date",
+            "direction": "ascending"
+        }
+    ],
       page_size: 100,
     }),
   };

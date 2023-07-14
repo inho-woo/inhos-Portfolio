@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "./components/layout";
 import MainPage from "./components/mainPage";
-import { Box, LinkOverlay, Select } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const Home = () => {
   return (
