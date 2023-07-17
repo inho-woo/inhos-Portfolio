@@ -1,14 +1,25 @@
-React / Yarn / Next.js / TypeScript / Chakra UI / Tailwind CSS
+
+# inho's PortFilo #
+
+## 사용한 기술 ##
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Yarn-2C8EBB?style=flat-square&logo=Yarn&logoColor=white"/></a>&nbsp;&nbsp; 
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/></a>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/></a>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Chakra UI-319795?style=flat-square&logo=Chakra UI&logoColor=white"/></a>&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat-square&logo=Tailwind CSS&logoColor=white"/></a>&nbsp;&nbsp;
 
 
-이미지 출처 -- Freepik
-<a href="https://kr.freepik.com/free-vector/illustration-of-circuit_2606103.htm#query=%EB%B0%98%EB%8F%84%EC%B2%B4%20%EC%95%84%EC%9D%B4%EC%BD%98&position=1&from_view=keyword&track=ais">
-작가 rawpixel.com</a>
+### 이미지 출처 -- Freepik ###
+
 
 <a href="https://kr.freepik.com/free-vector/semicondoctor-production-composition-with-technology-and-laboratory-symbols-isometric_6847298.htm#query=%EB%B0%98%EB%8F%84%EC%B2%B4&position=0&from_view=search&track=sph">
 작가 macrovector</a>
 
-<a href="https://www.freepik.com/free-vector/hand-sanitizer-illustration-flat-design_7372702.htm#page=3&query=hand%20sanitizer&position=18&from_view=search&track=ais"></a>
+<a href="https://www.freepik.com/free-vector/hand-sanitizer-illustration-flat-design_7372702.htm#page=3&query=hand%20sanitizer&position=18&from_view=search&track=ais">
+작가 freepik.com</a>
+
+
 <a href="https://kr.freepik.com/free-vector/doctor-check-vaccine-dose-for-covid-corona-virus-pandemic_17821366.htm#page=2&query=%ED%95%84%EB%9F%AC&position=8&from_view=search&track=sph">
 작가 syarifahbrit</a>
 
@@ -27,4 +38,5 @@ React / Yarn / Next.js / TypeScript / Chakra UI / Tailwind CSS
 <a href="https://kr.freepik.com/free-vector/industrial-machinery-concept-icons-set-with-milling-machine-symbols-isometric-isolated_6839981.htm#page=3&query=%EB%B2%A0%EC%96%B4%EB%A7%81%20%EA%B3%B5%EC%9E%A5&position=0&from_view=search&track=ais">
 작가 macrovector</a>
 
-<a href="https://kr.freepik.com/free-vector/modern-productivity-concept-with-isometric-view_3271435.htm#page=2&query=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%86%8C%EC%8A%A4%20%EA%B0%9C%EC%A1%B0&position=16&from_view=search&track=ais"></a>
+<a href="https://kr.freepik.com/free-vector/modern-productivity-concept-with-isometric-view_3271435.htm#page=2&query=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%86%8C%EC%8A%A4%20%EA%B0%9C%EC%A1%B0&position=16&from_view=search&track=ais">
+작가 freepik.com</a>
