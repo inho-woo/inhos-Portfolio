@@ -27,11 +27,15 @@ body {
 }
 
 .project-card {
-  @apply flex flex-col  rounded-xl w-full
+  @apply flex flex-col rounded-xl w-full
           transition duration-200 transform border border-gray-100
           hover:scale-105
           hover:shadow-2xl
           dark:border-gray-200/50
           dark:hover:shadow-gray-400/40
+}
 
+.project-card img {
+  width: 100%;
+  height: auto;
 }

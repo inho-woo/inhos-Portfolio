@@ -13,7 +13,7 @@ const project = ({ projects }: { projects: ProjectInterface.Project }) => {
         <Heading className="text-4xl font-bold sm:text-4xl">
           <Box as="span" className="pl-4 text-blue-500"></Box>
         </Heading>
-        <SimpleGrid className="grid grid-cols-4 gap-10 p-16 m-4 md:grid-cols-3">
+        <SimpleGrid className="grid grid-cols-3 gap-10 p-16 m-4 ">
         {projects.results.map((projects) => (
             <CardItem key={projects.id} data={projects}/>
         ))}
@@ -23,6 +23,7 @@ const project = ({ projects }: { projects: ProjectInterface.Project }) => {
   );
 };
 
+//Notion 데이터 불러오기
 export async function getServerSideProps() {
   const options = {
     method: "POST",

@@ -1,12 +1,4 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  Heading,
-  Img,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Img, Stack, Text } from "@chakra-ui/react";
 import { ProjectInterface } from "./project";
 
 const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
@@ -37,16 +29,15 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   return (
     <>
       <Box className="project-card">
-        <Card className="max-w-md">
+        <Card className="max-w-lg">
+
           <CardBody>
-            <Box className="h-150 w-150">
             <Img
               src={imgSrc}
               alt="cover image"
-              boxSize="fit-content"
               className=" rounded-md"
             />
-            </Box>
+         
             <Stack mt="2" spacing="10">
               <Heading className="text-base ml-2 mr-2">{title}</Heading>
               <Heading className="text-sm ml-2 mr-2">{date}</Heading>
