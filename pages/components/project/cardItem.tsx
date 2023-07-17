@@ -12,7 +12,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   //Project 별 Tag 데이터 보여주기
   const project_Tag = tags.map((tag: ProjectInterface.Tag) => (
     <Text
-      className="px-2 py-1 mr-1 rounded-md  bg-sky-600  w-auto text-white"
+      className="text-center px-2 py-1 mr-1 rounded-md  bg-sky-600  w-auto text-white"
       key={tag.id}
     >
       {tag.name}
@@ -29,21 +29,19 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   return (
     <>
       <Box className="project-card">
-        <Card className="max-w-lg">
-
+        <Card className="w-full">
           <CardBody>
             <Img
               src={imgSrc}
               alt="cover image"
               className=" rounded-md"
             />
-         
             <Stack mt="2" spacing="10">
               <Heading className="text-base ml-2 mr-2">{title}</Heading>
               <Heading className="text-sm ml-2 mr-2">{date}</Heading>
               <Box>{workText}</Box>
-                <Box className="flex items-start ml-3 mb-3">{project_Tag}</Box>
-            </Stack>
+              <Box className=" flex bottom-0 mb-2 ml-2 mr-2">{project_Tag}</Box>
+              </Stack>
           </CardBody>
         </Card>
       </Box>

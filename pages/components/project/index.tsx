@@ -13,7 +13,7 @@ const project = ({ projects }: { projects: ProjectInterface.Project }) => {
         <Heading className="text-4xl font-bold sm:text-4xl">
           <Box as="span" className="pl-4 text-blue-500"></Box>
         </Heading>
-        <SimpleGrid className="grid grid-cols-3 gap-10 p-16 m-4 ">
+        <SimpleGrid className="grid grid-cols-3 gap-10 p-1 m-0 ">
         {projects.results.map((projects) => (
             <CardItem key={projects.id} data={projects}/>
         ))}
@@ -24,7 +24,7 @@ const project = ({ projects }: { projects: ProjectInterface.Project }) => {
 };
 
 //Notion 데이터 불러오기
-export async function getServerSideProps() {
+export const getServerSideProps = async() => {
   const options = {
     method: "POST",
     headers: {
@@ -52,9 +52,7 @@ export async function getServerSideProps() {
   const projects = await res.json();
   
   return {
-    props: { projects }, // will be passed to the page component as props
-    // getStaticProps() 메소드를 사용한다면 revalidate 로 데이터 변경시 갱신가능!
-    // revalidate: 1 // 데이터 변경이 있으면 갱신 1초 마다
+    props: { projects }
   };
 }
 
