@@ -1,17 +1,9 @@
 import Layout from "../layout";
 import {
   Box,
-  Button,
-  ButtonGroup,
   Card,
-  CardBody,
-  CardFooter,
-  Divider,
   Flex,
   Heading,
-  Stack,
-  Text,
-  VStack,
 } from "@chakra-ui/react";
 
 const About = () => {
