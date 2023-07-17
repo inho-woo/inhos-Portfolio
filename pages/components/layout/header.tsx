@@ -1,36 +1,46 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, Button, Avatar } from "@chakra-ui/react";
 import  Link  from "next/link";
+import { useRouter } from "next/router";
+
+
 
 const Header = () => {
+
+  const router = useRouter();
+
+  const HomeRouter = () => {
+    router.push('/');
+  }
+
+  const AboutRouter = () => {
+    router.push('/components/about');
+  }
+
+  const ProjectRouter = () => {
+    router.push('/components/project');
+  }
+
+  const ContactRouter = () => {
+    router.push('/components/contact');
+  }
+
   return (
     <>
       <Flex className="body-font">
         <Box className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <Box className="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ... text-3xl">
-            <Link  href="/" >
-              inho
-            </Link>
-          </Box>
+            <Avatar className="w-10" src="" onClick={HomeRouter}/>
         </Box>
         <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-20">
-          <Link href="/">
-            Home
-          </Link>
+        <Button onClick={HomeRouter}>Home</Button>
         </Box>
         <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-20">
-          <Link  href="/about" >
-            About
-          </Link>
+        <Button onClick={AboutRouter}>About</Button>
         </Box>
         <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-20">
-          <Link  href="/components/mainPage/career" >
-            Project
-          </Link>
+        <Button onClick={ProjectRouter}>Project</Button>
         </Box>
         <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-20">
-          <Link href="/contact" >
-            Contact
-          </Link>
+        <Button onClick={ContactRouter}>Contact</Button>
         </Box>
       </Flex>
     </>

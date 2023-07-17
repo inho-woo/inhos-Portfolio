@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "./components/layout";
-import MainPage from "./components/mainPage";
+import MainPage from "./mainPage";
 import { Box } from "@chakra-ui/react";
 
 const Home = () => {

@@ -1,4 +1,4 @@
-export namespace CareerInterface {
+export namespace ProjectInterface {
 
   interface Project {
     id: string;
@@ -42,6 +42,11 @@ export namespace CareerInterface {
     id: Key;
     name: string;
     color : string;
+  }
+
+  interface Work {
+    item: string;
+    index : number;
   }
   
 }

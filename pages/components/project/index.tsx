@@ -1,24 +1,23 @@
-import Layout from "../../layout";
-import { Box, Heading, Card } from "@chakra-ui/react";
-import { TOKEN, DATABASE_ID } from "../../../../config";
+import Layout from "../layout";
+import { Box, Heading, Card, SimpleGrid } from "@chakra-ui/react";
+import { TOKEN, DATABASE_ID } from "../../../config";
 import React from "react";
-import CardItem from "./careerItem"
-import {CareerInterface} from "./career"
+import CardItem from "./cardItem"
+import {ProjectInterface} from "./project"
 
-const career = ({ projects }: { projects: CareerInterface.Project }) => {
+const project = ({ projects }: { projects: ProjectInterface.Project }) => {
   
   return (
     <Layout>
       <Box className="flex flex-col items-center justify-center min-h-screen px-3 mb-10">
-        <Heading className="text-4xl font-bold sm:text-6xl">
-          총 프로젝트 : {projects.results.length}
+        <Heading className="text-4xl font-bold sm:text-4xl">
           <Box as="span" className="pl-4 text-blue-500"></Box>
         </Heading>
-        <Box className="grid grid-cols-3 gap-10 p-16 m-4 md:grid-cols-3">
+        <SimpleGrid className="grid grid-cols-4 gap-10 p-16 m-4 md:grid-cols-3">
         {projects.results.map((projects) => (
             <CardItem key={projects.id} data={projects}/>
         ))}
-        </Box>
+        </SimpleGrid>
       </Box>
     </Layout>
   );
@@ -58,4 +57,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default career;
+export default project;
