@@ -12,7 +12,7 @@ const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
   return (
     <>
       <Layout>
-        <Box className="flex min-h-screen flex-col items-center justify-center  body-font">
+        <Box className="flex min-h-screen flex-col items-center justify-center">
           <Box
             id="Home"
             className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
@@ -20,16 +20,19 @@ const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
             <MainPage />
           </Box>
         </Box>
+
         <Box id="About">
           <About />
         </Box>
+
         <Box id="Project">
           <Project projects={projects} />
         </Box>
         <Box id="Contact">
           <Contact />
         </Box>
-        <TopButton/>
+
+        <TopButton />
       </Layout>
     </>
   );
