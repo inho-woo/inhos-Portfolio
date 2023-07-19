@@ -1,45 +1,71 @@
-import Head from "next/head";
+import { DATABASE_ID, TOKEN } from "@/config";
+import About from "./components/about";
+import Contact from "./components/contact";
 import Layout from "./components/layout";
+import TopButton from "./components/layout/topToggle";
+import Project from "./components/project";
 import MainPage from "./mainPage";
 import { Box } from "@chakra-ui/react";
-import {
-  Animator,
-  Fade,
-  MoveOut,
-  ScrollContainer,
-  ScrollPage,
-  Sticky,
-  batch,
-} from "react-scroll-motion";
-import About from "./components/about";
-import Header from "./components/layout/header";
-import Footer from "./components/layout/footer";
+import { ProjectInterface } from "./components/project/project";
 
-const Home = () => {
+const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
   return (
     <>
-      <Header />
-      <ScrollContainer snap="mandatory">
-        <ScrollPage>
-          <Animator
-            animation={batch(Fade(0, 1), Sticky(50, 50), MoveOut(0, -700))}>
-            <Box className="flex min-h-screen flex-col items-center justify-center  body-font">
-              <Box className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                <MainPage />
-              </Box>
-            </Box>
-          </Animator>
-        </ScrollPage>
-        <ScrollPage>
-          <Animator
-            animation={batch(Fade(0, 2), Sticky(50, 50), MoveOut(700, -500))}>
-            <About />
-          </Animator>
-        </ScrollPage>
-      </ScrollContainer>
-      <Footer />
+      <Layout>
+        <Box className="flex min-h-screen flex-col items-center justify-center  body-font">
+          <Box
+            id="Home"
+            className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+          >
+            <MainPage />
+          </Box>
+        </Box>
+        <Box id="About">
+          <About />
+        </Box>
+        <Box id="Project">
+          <Project projects={projects} />
+        </Box>
+        <Box id="Contact">
+          <Contact />
+        </Box>
+        <TopButton/>
+      </Layout>
     </>
   );
+};
+
+//Notion 데이터 불러오기
+export const getServerSideProps = async () => {
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "Notion-Version": "2022-06-28",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    body: JSON.stringify({
+      sorts: [
+        {
+          property: "Date",
+          direction: "ascending",
+        },
+      ],
+      page_size: 100,
+    }),
+  };
+
+  const res = await fetch(
+    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    options
+  );
+
+  const projects = await res.json();
+
+  return {
+    props: { projects },
+  };
 };
 
 export default Home;

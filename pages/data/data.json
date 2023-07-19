@@ -1,0 +1,66 @@
+{
+  "skill": [
+    {
+      "id": "React",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1579667701/noticon/basd2y5bygpkqjiixuqy.png"
+    },
+    {
+      "id": "Npm",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912768/noticon/ix6jwc1vww6hdxacncbx.jpg"
+    },
+    {
+      "id": "Yarn",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912854/noticon/cip7txxbjtlhbtmlytb7.jpg"
+    },
+    {
+      "id": "Next.js",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566879300/noticon/fvty9lnsbjol5lq9u3by.svg"
+    },
+    {
+      "id": "TypeScript",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566913457/noticon/eh4d0dnic4n1neth3fui.png"
+    },
+    {
+      "id": "Javascript",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567008394/noticon/ohybolu4ensol1gzqas1.png"
+    },
+    {
+      "id": "HTML",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566995514/noticon/jufppyr8htislboas4ve.png"
+    },
+    {
+      "id": "CSS",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566912109/noticon/puksfce6wca36hes1vom.png"
+    },
+    {
+      "id": "MariaDB",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1566920129/noticon/r9gn1ilil1r8ar4w59dj.png"
+    },
+    {
+      "id": "MSSQL",
+      "src": "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1655690352/noticon/qikmxkdq66v1knlhrw2e.png"
+    }
+  ],
+  "contact": [
+    {
+      "key": "Name",
+      "value": "황인호"
+    },
+    {
+      "key": "Phone",
+      "value": "010-9961-2336"
+    },
+    {
+      "key": "Email",
+      "value": "dlsgh1354@gmail.com"
+    },
+    {
+      "key": "Github",
+      "value": "https://github.com/inho-woo"
+    },
+    {
+      "key": "GitBook",
+      "value": "https://inho-woos-organization.gitbook.io/inhos-gitbook/"
+    }
+  ]
+}

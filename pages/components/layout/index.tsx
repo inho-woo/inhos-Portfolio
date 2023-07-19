@@ -1,13 +1,14 @@
 import Header from './header';
 import Footer from './footer';
+import { Box } from '@chakra-ui/react';
 
 const Layout = (props : any) => {
     return (
-        <div className="bg-primary">
-            <Header/>
+        <Box className="bg-primary">
+            <Header />
                 {props.children}
             <Footer/>
-        </div>
+        </Box>
     );
 }
 
