@@ -13,8 +13,8 @@ const Contact = () => {
               className="w-30"
             />
             <Box className="ml-20">
-              {data["contact"].map((data) => (
-                <ContactGrid key={data.key} data={data}/>
+              {data["contact"]?.map((data) => (
+                <ContactGrid key={data?.key} data={data}/>
               ))}   
             </Box>
           </Box>
