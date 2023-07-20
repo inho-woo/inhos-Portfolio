@@ -2,10 +2,10 @@ import { Box, Card, CardBody, Heading, Img, Stack, Text } from "@chakra-ui/react
 import { ProjectInterface } from "./project";
 
 const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
-  const title = data.properties.Project.title[0].plain_text; //Notion 프로젝트별 Title
-  const tags = data.properties.Tags.multi_select; // Notion 프로젝트별 Tags
-  const work = data.properties.Work.rich_text[0].plain_text; // Notion 프로젝트별 Work
-  const date = data.properties.Date.rich_text[0].plain_text; // Notion 프로젝트별 Date
+  const title = data.properties?.Project.title[0].plain_text; //Notion 프로젝트별 Title
+  const tags = data.properties?.Tags.multi_select; // Notion 프로젝트별 Tags
+  const work = data.properties?.Work.rich_text[0].plain_text; // Notion 프로젝트별 Work
+  const date = data.properties?.Date.rich_text[0].plain_text; // Notion 프로젝트별 Date
   const imgSrc = data.cover.file?.url || data.cover.external.url; // Notion 프로젝트별 이미지
 
 
