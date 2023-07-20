@@ -14,11 +14,11 @@ const ContactGrid = ({ data }: { data: contactInterface.data }) => {
         </GridItem>
         <GridItem>
           {validUrl.is_uri(data?.value) ? (
-            <Link href={data.value} target="_blank" rel="noopener noreferrer">
-              <Text className="-ml-40 font-bold text-lg">{data.value}</Text>
+            <Link href={data?.value} target="_blank" rel="noopener noreferrer">
+              <Text className="-ml-40 font-bold text-lg">{data?.value}</Text>
             </Link>
           ) : (
-            <Text className="-ml-40 font-bold text-lg">{data.value}</Text>
+            <Text className="-ml-40 font-bold text-lg">{data?.value}</Text>
           )}
         </GridItem>
       </Grid>

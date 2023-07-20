@@ -8,7 +8,7 @@ const skillItem = ({data} : { data: aboutInterface.data }) => {
     <Card>
     <CardBody className="flex items-center w-1/4">
     <Image src={data?.src} borderRadius="full" />
-        <Text className="ml-32 text-3xl">{data.id}</Text>
+        <Text className="ml-32 text-3xl">{data?.id}</Text>
     </CardBody>
   </Card>
       </Box>
