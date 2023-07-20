@@ -7,6 +7,7 @@ import Project from "./components/project";
 import MainPage from "./mainPage";
 import { Box } from "@chakra-ui/react";
 import { ProjectInterface } from "./components/project/project";
+import { GetServerSideProps } from "next";
 
 const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
   return (
@@ -39,7 +40,7 @@ const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
 };
 
 //Notion 데이터 불러오기
-export const getServerSideProps = async () => {
+export const getServerSideProps : GetServerSideProps  = async () => {
   const options = {
     method: "POST",
     headers: {
