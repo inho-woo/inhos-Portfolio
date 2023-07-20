@@ -10,7 +10,7 @@ const Project = ({ projects }: { projects: ProjectInterface.Project }) => {
         <Box as="span" className="pl-4 text-blue-500"></Box>
       </Heading>
       <SimpleGrid className="grid grid-cols-3 gap-10 p-1 m-0 ">
-        {projects.results?.map((projects) => (
+        {projects?.results?.map((projects) => (
           <CardItem key={projects?.id} data={projects} />
         ))}
       </SimpleGrid>
