@@ -35,11 +35,11 @@ export namespace ProjectInterface {
   }
   
   interface ProjectResult extends Project {
-    id: Key;
+    id: string;
   }
  
   interface Tag {
-    id: Key;
+    id: string;
     name: string;
     color : string;
   }

@@ -1,6 +1,4 @@
-import Layout from "../layout";
-import { Box, Heading, Card, SimpleGrid } from "@chakra-ui/react";
-import { TOKEN, DATABASE_ID } from "../../../config";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import CardItem from "./cardItem";
 import { ProjectInterface } from "./project";
@@ -12,7 +10,7 @@ const Project = ({ projects }: { projects: ProjectInterface.Project }) => {
         <Box as="span" className="pl-4 text-blue-500"></Box>
       </Heading>
       <SimpleGrid className="grid grid-cols-3 gap-10 p-1 m-0 ">
-        {projects.results.map((projects) => (
+        {projects.results?.map((projects) => (
           <CardItem key={projects.id} data={projects} />
         ))}
       </SimpleGrid>

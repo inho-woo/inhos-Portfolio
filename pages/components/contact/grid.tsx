@@ -10,10 +10,10 @@ const ContactGrid = ({ data }: { data: contactInterface.data }) => {
     <>
       <Grid templateColumns="repeat(2, 1fr)">
         <GridItem>
-          <Text className="font-bold text-lg">{data.key}</Text>
+          <Text className="font-bold text-lg">{data?.key}</Text>
         </GridItem>
         <GridItem>
-          {validUrl.is_uri(data.value) ? (
+          {validUrl.is_uri(data?.value) ? (
             <Link href={data.value} target="_blank" rel="noopener noreferrer">
               <Text className="-ml-40 font-bold text-lg">{data.value}</Text>
             </Link>
