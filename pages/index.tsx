@@ -7,7 +7,7 @@ import Project from "./components/project";
 import MainPage from "./mainPage";
 import { Box } from "@chakra-ui/react";
 import { ProjectInterface } from "./components/project/project";
-import { GetStaticProps } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
   return (
@@ -40,7 +40,7 @@ const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
 };
 
 //Notion 데이터 불러오기
-export const getStaticProps: GetStaticProps = async () => {
+export const Handler =  (req : NextApiRequest, res : NextApiResponse) => async () => {
   const options = {
     method: "POST",
     headers: {
