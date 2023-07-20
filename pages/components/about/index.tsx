@@ -27,8 +27,8 @@ const About = () => {
         <Heading className="text-4xl text-center">My Skill</Heading>
         <SimpleGrid className="justify-center grid grid-cols-2 gap-10 p-10 m-10 ">
           {ImgData["skill"].map((ImgData) => (
-            <Box>
-              <SkillItem key={ImgData.id} data={ImgData} />
+            <Box key={ImgData.id}>
+              <SkillItem  data={ImgData} />
             </Box>
           ))}
         </SimpleGrid>
