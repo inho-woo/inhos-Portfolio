@@ -1,3 +1,4 @@
+import { ArrowUpIcon } from "@chakra-ui/icons";
 import { Box, Button, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ const TopButton = () => {
     visible && (
       <Box className="scroll">
         <Button className="scroll-button" onClick={scrollToTop}>
-          <Text>Top</Text>
+         <ArrowUpIcon w={30} h={20}/>
         </Button>
       </Box>
     )

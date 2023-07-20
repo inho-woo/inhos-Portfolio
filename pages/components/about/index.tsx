@@ -12,7 +12,7 @@ const About = () => {
             <Box className="flex justify-between items-center w-full">
               <Heading className="py-0 text-6xl">About Me</Heading>
               <Heading className="ml-4 text-right text-6xl">
-                "배움은 끝이 없다."
+              &apos;배움은 끝이 없다.&apos;
               </Heading>
             </Box>
             <Box className="w-full md:w-1/2 mt-4 md:mt-0  text-center">
@@ -28,7 +28,7 @@ const About = () => {
         <SimpleGrid className="justify-center grid grid-cols-2 gap-10 p-10 m-10 ">
           {ImgData["skill"].map((ImgData) => (
             <Box>
-              <SkillItem data={ImgData} />
+              <SkillItem key={ImgData.id} data={ImgData} />
             </Box>
           ))}
         </SimpleGrid>
