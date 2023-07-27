@@ -39,4 +39,4 @@
 <a href="https://kr.freepik.com/free-vector/modern-productivity-concept-with-isometric-view_3271435.htm#page=2&query=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%86%8C%EC%8A%A4%20%EA%B0%9C%EC%A1%B0&position=16&from_view=search&track=ais">작가 freepik.com</a>
 
 
-소스파일 내려받아, #yarn install# 후 #yarn dev# 을 통해 실행 가능.
+소스파일 내려받아, # yarn install # 후 # yarn dev # 을 통해 실행 가능.
