@@ -1,5 +1,5 @@
 
-# inho's PortFilo #
+# inho's PortFolio #
 
 ## 사용한 기술 ##
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>&nbsp;&nbsp;
