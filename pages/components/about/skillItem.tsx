@@ -17,7 +17,7 @@ const skillItem = ({data} : { data: aboutInterface.data }) => {
     <Box className="project-card">
     <Card>
     <CardBody className="flex items-center w-1/4">
-    <Image src={data.src} className="w-auto h-auto rounded-xl"/>
+    <Image src={data?.src} className="w-auto h-auto rounded-xl"/>
         <Text className="ml-32 text-3xl">{data?.id}</Text>
     </CardBody>
   </Card>
