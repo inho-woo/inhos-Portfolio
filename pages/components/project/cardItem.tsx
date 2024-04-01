@@ -24,7 +24,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
 
   return (
     <>
-      <Box className="project-card">
+      <Box className="project-card" mt="50">
         <Card className="w-auto">
           <CardBody>
             <Img
