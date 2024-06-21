@@ -9,7 +9,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   const imgSrc = data?.cover?.file.url || data?.cover?.external.url; // Notion 프로젝트별 Image
 
   //Project 별 Tag 데이터 보여주기
-  const project_Tag = tags.map((tag: ProjectInterface.Tag) => {
+  const project_Tag = tags?.map((tag: ProjectInterface.Tag) => {
     let textColorClass = "text-white";
   // 밝은 색상 텍스트 색상을 검정색으로 설정
   if (tag.color === "pink" || tag.color === "orange") {
