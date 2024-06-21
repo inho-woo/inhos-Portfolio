@@ -6,7 +6,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   const tags = data?.properties?.Tags.multi_select; // Notion 프로젝트별 Tags
   const work = data?.properties?.Work.rich_text[0].plain_text; // Notion 프로젝트별 Work
   const date = data?.properties?.Date.rich_text[0].plain_text; // Notion 프로젝트별 Date
-  const imgSrc = data?.cover?.file.url || data?.cover?.external.url; // Notion 프로젝트별 Image
+  const imgSrc = data?.cover?.file?.url || data?.cover?.external?.url; // Notion 프로젝트별 Image
 
   //Project 별 Tag 데이터 보여주기
   const project_Tag = tags?.map((tag: ProjectInterface.Tag) => {
