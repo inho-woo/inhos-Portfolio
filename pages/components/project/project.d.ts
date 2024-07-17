@@ -30,7 +30,11 @@ export namespace ProjectInterface {
           plain_text: string;
         }[];
       };
-
+      Image : {
+        rich_text : {
+          plain_text: string,
+        }[];
+      } // 20240717 추가 imgbb로 이미지를 불러오기 위한 interface 수정
     };
   }
   
