@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <>
       <Box className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <Heading className="w-full text-2xl  md:w-5/6  md:text-3xl lg:text-6xl font-medium text-left">
+        <Heading className="w-full text-2xl md:w-5/6  md:text-3xl lg:text-6xl font-medium">
           안녕하세요.
         </Heading>
         <Text className="text-3xl lg:inline-block">

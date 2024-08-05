@@ -39,7 +39,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
   return (
     <>
       <Box className="project-card" mt="10%">
-        <Card className="flex flex-col relative">
+        <Card className="flex flex-col sm:flex-row relative">
           <CardBody className="flex flex-col h-full pb-8">
             <Img
               src={imgSrc}
@@ -49,8 +49,8 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
             <Stack mt="auto" spacing="10">
               <Heading className="text-base ml-2 mr-2">{title}</Heading>
               <Heading className="text-md ml-2 mr-2">{date}</Heading>
-              <Box className="text-lg mb-2">{workText}</Box>
-              <Box className="flex place-content-center fixed bottom-1 w-full">{project_Tag}</Box>
+              <Box className="sm:text-xs md:text-base lg:text-lg xl:text-xl mb-10">{workText}</Box>
+              <Box className="flex flex-wrap justify-center fixed bottom-1 w-full mt-20 sm:mt-40 md:mt-36 lg:mt-30 xl:mt-24">{project_Tag}</Box>
             </Stack>
           </CardBody>
         </Card>

@@ -10,15 +10,15 @@ const ContactGrid = ({ data }: { data: contactInterface.data }) => {
     <>
       <Grid templateColumns="repeat(2, 1fr)">
         <GridItem>
-          <Text className="font-bold text-lg">{data?.key}</Text>
+          <Text className="text-lg font-bold sm:flex-row sm:w-1/3">{data?.key}</Text>
         </GridItem>
         <GridItem>
           {validUrl.is_uri(data?.value) ? (
             <Link href={data?.value} target="_blank" rel="noopener noreferrer">
-              <Text className="-ml-40 font-bold text-lg">{data?.value}</Text>
+              <Text className="ml-30 font-bold">{data?.value}</Text>
             </Link>
           ) : (
-            <Text className="-ml-40 font-bold text-lg">{data?.value}</Text>
+            <Text className="text-lg ml-30 font-bold">{data?.value}</Text>
           )}
         </GridItem>
       </Grid>
@@ -26,3 +26,8 @@ const ContactGrid = ({ data }: { data: contactInterface.data }) => {
   );
 };
 export default ContactGrid;
+
+// sm: '480px',
+// md: '768px',
+// lg: '976px',
+// xl: '1440px',
