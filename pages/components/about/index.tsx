@@ -1,8 +1,5 @@
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import Layout from "../layout";
 import ImgData from "../../data/data.json";
-import SkillItem from "./skillItem";
-import TopToggle from "../layout/topToggle";
 
 const About = () => {
   return (
@@ -32,15 +29,6 @@ const About = () => {
           ))}
           </Box>
       </Box>
-
-      <Heading className="text-4xl text-center">My Skill</Heading>
-      <SimpleGrid className="justify-center grid grid-cols-2 gap-10 p-10 m-10 ">
-        {ImgData["skill"].map((ImgData) => (
-          <Box key={ImgData.id}>
-            <SkillItem data={ImgData} />
-          </Box>
-        ))}
-      </SimpleGrid>
     </>
   );
 };

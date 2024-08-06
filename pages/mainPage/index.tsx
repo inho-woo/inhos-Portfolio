@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Spacer, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Animation from "./animation";
 
 const MainPage = () => {

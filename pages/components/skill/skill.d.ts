@@ -1,4 +1,4 @@
-export namespace  aboutInterface {
+export namespace  skillInterface {
 
     interface data {
         id : string,

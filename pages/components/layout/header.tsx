@@ -16,28 +16,35 @@ const Header = () => {
           <Box className=" md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
             <Button>
               <Link to="Home" smooth={true} duration={800}>
-                <Text className=" text-white">Home</Text>
+                <Text className="text-white">Home</Text>
               </Link>
             </Button>
           </Box>
           <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
             <Button>
               <Link to="About" smooth={true} duration={800}>
-                <Text className=" text-white">About</Text>
+                <Text className="text-white">About</Text>
+              </Link>
+            </Button>
+          </Box>
+          <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
+            <Button>
+              <Link to="Skill" smooth={true} duration={800}>
+                <Text className="text-white">Skill</Text>
               </Link>
             </Button>
           </Box>
           <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
             <Button>
               <Link to="Project" smooth={true} duration={800}>
-                <Text className=" text-white">Project</Text>
+                <Text className="text-white">Project</Text>
               </Link>
             </Button>
           </Box>
           <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
             <Button>
               <Link to="Contact" smooth={true} duration={800}>
-                <Text className=" text-white">Contact</Text>
+                <Text className="text-white">Contact</Text>
               </Link>
             </Button>
           </Box>

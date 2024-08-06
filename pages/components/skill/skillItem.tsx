@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Box, Card, CardBody, Image, Text } from "@chakra-ui/react";
-import { aboutInterface } from "./about";
+import { skillInterface } from "./skill";
 
-const skillItem = ({data} : { data: aboutInterface.data }) => {
+const skillItem = ({data} : { data: skillInterface.data }) => {
 
   return (
     <>

@@ -1,5 +1,6 @@
 import { DATABASE_ID, TOKEN } from "@/config";
 import About from "./components/about";
+import Skill from "./components/skill";
 import Contact from "./components/contact";
 import Layout from "./components/layout";
 import TopButton from "./components/layout/topToggle";
@@ -9,30 +10,28 @@ import { Box } from "@chakra-ui/react";
 import { ProjectInterface } from "./components/project/project";
 import { GetStaticProps } from 'next';
 
+
 const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
   return (
     <>
       <Layout>
         <Box className="flex min-h-screen flex-col items-center justify-center">
-          <Box
-            id="Home"
-            className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
-          >
+          <Box id="Home" className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <MainPage />
           </Box>
         </Box>
-
         <Box id="About">
           <About />
         </Box>
-
+        <Box id="Skill">
+          <Skill />
+        </Box>
         <Box id="Project">
           <Project projects={projects} />
         </Box>
         <Box id="Contact">
           <Contact />
         </Box>
-
         <TopButton />
       </Layout>
     </>
