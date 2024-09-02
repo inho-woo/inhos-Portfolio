@@ -40,3 +40,5 @@
 
 
 <a href="https://kr.freepik.com/free-vector/electric-car-concept-illustration_6201167.htm#query=electronic%20car&position=0&from_view=search&track=ais&uuid=0474fead-f054-4969-ae96-787daee2cb21">작가 storyset</a>
+
+<a href="https://kr.freepik.com/free-vector/senior-medical-emergency-alert-systems-service-isometric-composition-with-flowchart-isolated-gadget-icons-people-vector-illustration_41683941.htm#fromView=image_search_similar&page=1&position=2&uuid=b8fe91c8-f8b4-43d7-b387-dc5be9d7e68a">작가 macrovector</a>
