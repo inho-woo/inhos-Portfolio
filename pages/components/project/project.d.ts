@@ -13,11 +13,17 @@ export namespace ProjectInterface {
     };
     properties: {
       Tags: {
-        multi_select: any; //... 
+        multi_select: [
+          {
+            id: string;
+            name: string;
+            color : string;
+          }
+        ];
       };
       Work: {
         rich_text: {
-          plain_text: any;
+          plain_text: string;
         }[];
       };
       Date: {
@@ -46,11 +52,6 @@ export namespace ProjectInterface {
     id: string;
     name: string;
     color : string;
-  }
-
-  interface Work {
-    item: string;
-    index : number;
   }
   
 }
