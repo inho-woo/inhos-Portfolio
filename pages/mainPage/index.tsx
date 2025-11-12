@@ -1,5 +1,4 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
-// import Animation from "./animation";
 import dynamic from 'next/dynamic';
 const Animation = dynamic(() => import('./animation'), { ssr: false });
 
