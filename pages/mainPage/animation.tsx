@@ -20,7 +20,7 @@ export default function Animation() {
       loop
       play
       animationData={animationData}
-      style={{ width: '100%', height: 320 }}
+      style={{ width: '100%', height: '90%' }}
     />
   );
 }
