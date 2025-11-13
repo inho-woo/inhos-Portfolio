@@ -51,6 +51,7 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
               className="rounded-xl"
               width={600}
               height={400}
+              priority
             />
             <Stack mt="auto" spacing="10">
               <Heading className="text-base ml-2 mr-2">{title}</Heading>
