@@ -24,7 +24,8 @@ const nextConfig = {
       'www.notion.so',
       'images.unsplash.com',
       's3.us-west-2.amazonaws.com',
-      'i.ibb.co'
+      'i.ibb.co',
+      'i.postimg.cc'
     ]
   }
 }

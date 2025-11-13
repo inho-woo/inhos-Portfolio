@@ -1,5 +1,6 @@
-import { Box, Card, CardBody, CardFooter, Heading, Img, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Img, Stack, Text} from "@chakra-ui/react";
 import { ProjectInterface } from "./project";
+import OptImg from "./optImg";
 
 const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
 
@@ -44,10 +45,12 @@ const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
       <Box className="project-card" mt="10%">
         <Card className="flex flex-col sm:flex-row relative">
           <CardBody className="flex flex-col h-full pb-8">
-            <Img
+            <OptImg
               src={imgSrc}
               alt="cover image"
               className="rounded-xl"
+              width={600}
+              height={400}
             />
             <Stack mt="auto" spacing="10">
               <Heading className="text-base ml-2 mr-2">{title}</Heading>
