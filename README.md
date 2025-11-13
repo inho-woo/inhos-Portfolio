@@ -6,8 +6,6 @@
 <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=flat-square&logo=Yarn&logoColor=white"/></a>&nbsp;&nbsp; 
 <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/></a>&nbsp;&nbsp;
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/></a>&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Chakra UI-319795?style=flat-square&logo=Chakra UI&logoColor=white"/></a>&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=flat-square&logo=Tailwind CSS&logoColor=white"/></a>&nbsp;&nbsp;
 
 이미지 업로드  : https://inho2.imgbb.com/
 ### 이미지 출처 -- Freepik ###
