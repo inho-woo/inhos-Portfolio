@@ -1,18 +1,58 @@
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
+import { motion } from "framer-motion";
 import CardItem from "./cardItem";
 import { ProjectInterface } from "./project";
 
-const Project = ({ projects }: { projects: ProjectInterface.Project }) => {
+const MotionBox = motion(Box);
+const MotionHeading = motion(Heading);
 
-  if (!projects) return null;
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const Project = ({ projects }: { projects: ProjectInterface.ProjectsResponse }) => {
+  const projectItems = Array.isArray(projects?.results) ? projects.results : [];
+
+  if (projectItems.length === 0) return null;
   return (
-    <Box className="flex-col justify-center px-3 mb-10">
-      <SimpleGrid className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-1 m-0">
-        {projects.results.map((projects) => (
-          <CardItem key={projects.id} data={projects} />
+    <Box className="section-container">
+      <MotionHeading
+        className="section-title mb-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        Project
+      </MotionHeading>
+      <MotionBox
+        as={SimpleGrid}
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        variants={gridVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {projectItems.map((project) => (
+          <MotionBox
+            key={project.id}
+            variants={itemVariants}
+            whileHover={{ y: -6, transition: { duration: 0.3 } }}
+          >
+            <CardItem data={project} />
+          </MotionBox>
         ))}
-      </SimpleGrid>
+      </MotionBox>
     </Box>
   );
 };

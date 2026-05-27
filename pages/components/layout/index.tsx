@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react';
 
 const Layout = (props : any) => {
     return (
-        <Box className="bg-primary w-full overflow-auto">
+        <Box className="bg-primary min-h-screen w-full overflow-x-hidden">
             <Header />
                 {props.children}
             <Footer/>

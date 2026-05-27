@@ -4,7 +4,41 @@
 
 
 .bg-primary {
-    @apply bg-slate-800
+    @apply relative bg-slate-900;
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(99, 102, 241, 0.18), transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(236, 72, 153, 0.14), transparent 45%),
+        radial-gradient(circle at 60% 85%, rgba(34, 211, 238, 0.14), transparent 50%),
+        linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    background-attachment: fixed;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 lg:px-10;
+}
+
+.section-title {
+  @apply text-center text-3xl font-semibold sm:text-4xl;
+  background: linear-gradient(90deg, #c7d2fe 0%, #f9a8d4 50%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(129, 140, 248, 0.18);
+}
+
+.hero-gradient-text {
+  background: linear-gradient(120deg, #818cf8 0%, #ec4899 45%, #22d3ee 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heroGradientFlow 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(129, 140, 248, 0.25));
+}
+
+@keyframes heroGradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .btn-project {
@@ -12,20 +46,50 @@
 }
 
 .project-card {
-  @apply flex flex-col rounded-xl
-          transition duration-200 transform border border-gray-400
-          hover:scale-105
-          hover:shadow-2xl
-          
+  @apply flex h-full flex-col overflow-hidden rounded-xl border border-slate-500/40 bg-slate-800/40
+          backdrop-blur-sm transition-all duration-300;
 }
 
-.skill-card {
-  @apply flex flex-col rounded-xl
-          transition duration-200 transform border border-gray-400
-          hover:scale-105
-          hover:shadow-2xl
-          
+.project-card:hover {
+  border-color: rgba(129, 140, 248, 0.5);
+  box-shadow: 0 20px 60px -10px rgba(99, 102, 241, 0.25);
 }
+
+.skill-card-3d {
+  @apply flex h-full flex-col rounded-xl border border-slate-500/40 bg-slate-800/40
+          backdrop-blur-sm transition-colors duration-300;
+}
+
+.skill-card-3d:hover {
+  border-color: rgba(129, 140, 248, 0.55);
+}
+
+.contact-avatar-glow {
+  position: relative;
+  filter: drop-shadow(0 0 30px rgba(129, 140, 248, 0.45));
+  transition: filter 0.4s ease;
+}
+
+.contact-avatar-glow::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, #818cf8, #ec4899, #22d3ee, #818cf8);
+  z-index: -1;
+  filter: blur(14px);
+  opacity: 0.55;
+  animation: spinSlow 12s linear infinite;
+}
+
+.contact-avatar-glow:hover {
+  filter: drop-shadow(0 0 40px rgba(236, 72, 153, 0.55));
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
 h1, h2, h3, h4, h5, h6 {
     @apply text-white dark:text-white
 }
@@ -45,7 +109,7 @@ p {
 
 .project-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .scroll {
@@ -54,7 +118,7 @@ p {
   bottom:5%;
   z-index:1;
 }
-  
+
 .scroll-button {
     font-weight: bold;
     font-size: 15px;
@@ -65,4 +129,4 @@ p {
     border-radius: 50%;
     outline: none;
     cursor: pointer;
-}  
+}

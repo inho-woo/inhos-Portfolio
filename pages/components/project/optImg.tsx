@@ -14,6 +14,7 @@ const OptImg = chakra(Image, {
         "placeholder",
         "blurDataURL",
         "fill",
+        "sizes",
         "className",
         "style",
       ].includes(prop),
