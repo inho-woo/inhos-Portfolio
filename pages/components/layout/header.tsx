@@ -1,56 +1,29 @@
-import { Flex, Box, Button, Avatar, Text } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 
-const Header = () => {
+const navItems = ["Home", "About", "Skill", "Project", "Contact"];
 
+const Header = () => {
   return (
-    <>
-      <Flex>
-        <Box className="flex flex-wrap p-5 flex-col md:flex-row items-center ">
-          <Avatar
-            className="w-10"
-            src="https://github.com/inho-woo/inhos-Portfilo/assets/58337935/c4307970-c23b-4228-ad8f-4503f1fba0ae"
-          />
+    <Flex className="fixed left-0 top-0 z-20 w-full items-center justify-between gap-3 bg-slate-900/80 px-4 py-3 backdrop-blur sm:px-6">
+      <Avatar
+        className="h-9 w-9 shrink-0"
+        src="https://github.com/inho-woo/inhos-Portfilo/assets/58337935/c4307970-c23b-4228-ad8f-4503f1fba0ae"
+      />
+      <Box className="flex min-w-0 flex-1 justify-end overflow-x-auto">
+        <Box className="flex items-center gap-1 sm:gap-2">
+          {navItems.map((item) => (
+            <Button key={item} size="sm" variant="ghost" className="shrink-0 px-2">
+              <Link to={item} smooth={true} duration={800} offset={-72}>
+                <Text className="text-sm font-semibold text-white sm:text-base">
+                  {item}
+                </Text>
+              </Link>
+            </Button>
+          ))}
         </Box>
-        <Box className="flex flex-wrap right-0 py-2 fixed">
-          <Box className=" md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
-            <Button>
-              <Link to="Home" smooth={true} duration={800}>
-                <Text className="text-white">Home</Text>
-              </Link>
-            </Button>
-          </Box>
-          <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
-            <Button>
-              <Link to="About" smooth={true} duration={800}>
-                <Text className="text-white">About</Text>
-              </Link>
-            </Button>
-          </Box>
-          <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
-            <Button>
-              <Link to="Skill" smooth={true} duration={800}>
-                <Text className="text-white">Skill</Text>
-              </Link>
-            </Button>
-          </Box>
-          <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
-            <Button>
-              <Link to="Project" smooth={true} duration={800}>
-                <Text className="text-white">Project</Text>
-              </Link>
-            </Button>
-          </Box>
-          <Box className="md:ml-auto flex flex-wrap items-center text-base justify-center mr-6 ml-1 hover:text w-15">
-            <Button>
-              <Link to="Contact" smooth={true} duration={800}>
-                <Text className="text-white">Contact</Text>
-              </Link>
-            </Button>
-          </Box>
-        </Box>
-      </Flex>
-    </>
+      </Box>
+    </Flex>
   );
 };
 

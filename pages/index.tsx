@@ -11,12 +11,12 @@ import { ProjectInterface } from "./components/project/project";
 import { GetStaticProps } from 'next';
 
 
-const Home = ({ projects }: { projects: ProjectInterface.Project }) => {
+const Home = ({ projects }: { projects: ProjectInterface.ProjectsResponse }) => {
   return (
     <>
       <Layout>
-        <Box className="flex min-h-screen flex-col items-center justify-center">
-          <Box id="Home" className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <Box id="Home" className="section-container flex min-h-screen items-center">
+          <Box className="flex w-full flex-col items-center gap-10 md:flex-row md:justify-between">
             <MainPage />
           </Box>
         </Box>

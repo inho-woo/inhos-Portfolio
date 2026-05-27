@@ -1,36 +1,59 @@
-import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import ImgData from "../../data/data.json";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box);
+
+const aboutTexts = [
+  "이전 회사에서는 MES 솔루션과 모니터링 대시보드 솔루션의 개발 및 유지보수를 담당하며, React와 TypeScript를 활용한 다양한 프로젝트를 경험했습니다.",
+  "이후에는 AI 음성인식·STT 엔진 기반의 실시간 자막 및 회의록 솔루션을 개발하는 회사에서 솔루션 고도화와 유지보수 업무를 수행했습니다.",
+  "현재는 디지털 치료제 솔루션 회사에서 모니터링 대시보드와 백오피스 개발을 맡고 있습니다.",
+  "맡은 업무에 끝까지 책임지는 개발자로서, 다른 팀과의 협업과 원활한 소통을 무엇보다 중요하게 생각합니다.",
+  "이러한 경험을 바탕으로, 도전을 두려워하지 않는 태도로 한 걸음씩 더 나은 결과를 만들어 나가고 싶습니다.",
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const About = () => {
   return (
-    <>
-      <Box className="flex min-h-screen flex-col items-center justify-center">
-        <Heading className="text-4xl text-center">About Me</Heading>
-        <Heading className="ml-4 text-2xl mt-10">
-          안녕하세요
-        </Heading>
-        <Box className="w-full sm:w-1/3 md:w-1/2 mt-5 md:mt-5 mb-10">
-          {["늘 성장하는 개발자 황인호입니다.",
-            "저는 이전회사에서 MES 솔루션과 모니터링 대시보드 솔루션을 개발하고 유지보수하는 업무를 ",
-            "담당하였으며 React, Javascript , Typescript 를 이용해 다양한 프로젝트를 경험하였습니다.",
-            "그 후에는 AI 음성인식 및 STT 엔진을 기반으로 한 실시간 자막 및 회의록 솔루션을 ",
-            "개발하는 회사에서 근무하며 솔루션 고도화 및 유지보수를 담당했습니다.",
-            "주어진 업무에 최선을 다하는 개발자로서 다른팀과의 협업을 통해",
-            "팀원들과 소통하는 것을 중요시합니다.",
-            "이러한 경험을 바탕으로 도전을 두려워하지 않는 태도로 최고의 성과를 이루어 나가고 싶습니다.",
-          ].map((text, index) => (
-            <Text
-              key={index}
-              className={`mt-${
-                index === 0 ? 10 : 5
-              } text-2xl text-center text-zinc-200`}
-            >
-            {text}
-            </Text>
+    <Box className="section-container flex min-h-screen flex-col justify-center">
+      <MotionBox
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Heading className="section-title">About Me</Heading>
+      </MotionBox>
+      <MotionBox
+        className="mx-auto mt-10 w-full max-w-3xl"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Box className="mt-8 space-y-5">
+          {aboutTexts.map((text) => (
+            <MotionBox key={text} variants={itemVariants}>
+              <Text className="text-left text-base leading-8 text-slate-300 sm:text-lg">
+                {text}
+              </Text>
+            </MotionBox>
           ))}
-          </Box>
-      </Box>
-    </>
+        </Box>
+      </MotionBox>
+    </Box>
   );
 };
 

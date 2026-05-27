@@ -1,58 +1,44 @@
 export namespace ProjectInterface {
+  export interface ProjectsResponse {
+    results?: Project[];
+  }
 
-  interface Project {
+  export interface Project {
     id: string;
-    results: ProjectResult[];
-    cover : {
-      external: {
-        url : string;
+    cover?: {
+      external?: {
+        url?: string;
       };
-      file : {
-        url : string;
-      }
+      file?: {
+        url?: string;
+      };
     };
-    properties: {
-      Tags: {
-        multi_select: [
-          {
-            id: string;
-            name: string;
-            color : string;
-          }
-        ];
+    properties?: {
+      Tags?: {
+        multi_select?: Tag[];
       };
-      Work: {
-        rich_text: {
-          plain_text: string;
-        }[];
+      Work?: {
+        rich_text?: RichText[];
       };
-      Date: {
-        rich_text: {
-          plain_text: string;
-        }[];
+      Date?: {
+        rich_text?: RichText[];
       };
-      Project: {
-        title: {
-          plain_text: string;
-        }[];
+      Project?: {
+        title?: RichText[];
       };
-      Image : {
-        rich_text : {
-          plain_text: string,
-        }[];
-      } // 20240717 추가 imgbb로 이미지를 불러오기 위한 interface 수정
+      Image?: {
+        rich_text?: RichText[];
+      };
     };
   }
-  
-  interface ProjectResult extends Project {
-    id: string;
+
+  export interface RichText {
+    plain_text?: string;
   }
- 
-  interface Tag {
+
+  export interface Tag {
     id: string;
     name: string;
-    color : string;
+    color: string;
   }
-  
 }
- 

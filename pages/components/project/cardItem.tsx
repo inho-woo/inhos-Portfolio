@@ -1,68 +1,104 @@
-import { Box, Card, CardBody, Heading, Img, Stack, Text} from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
 import { ProjectInterface } from "./project";
 import OptImg from "./optImg";
 
+const tagColorMap: Record<string, string> = {
+  default: "#64748b",
+  gray: "#64748b",
+  brown: "#92400e",
+  orange: "#f97316",
+  yellow: "#facc15",
+  green: "#16a34a",
+  blue: "#2563eb",
+  purple: "#7c3aed",
+  pink: "#f9a8d4",
+  red: "#dc2626",
+};
+
+const darkTextTagColors = new Set(["orange", "yellow", "pink"]);
+
+const getPlainText = (items?: ProjectInterface.RichText[]) =>
+  items?.[0]?.plain_text?.trim() ?? "";
+
 const CardItem = ({ data }: { data: ProjectInterface.Project }) => {
+  if (!data) return null;
 
-  if(!data) return null;
-
-  const title = data.properties.Project.title[0].plain_text; //Notion 프로젝트별 Title
-  const tags = data.properties.Tags.multi_select; // Notion 프로젝트별 Tags
-  const work = data.properties.Work.rich_text[0].plain_text; // Notion 프로젝트별 Work
-  const date = data.properties.Date.rich_text[0].plain_text; // Notion 프로젝트별 Date
-  //const imgSrc = data.cover.file.url || data.cover.external.url; // Notion 프로젝트별 Image
-  /* 20240717 수정
-     기존 Notion API 를 통해 커버 이미지 URL를 호출하였으나, 
-     엑박 이슈로 인해 imgbb를 통해 이미지를 문자열로 받아옴
-  */
-  const imgSrc = data.properties.Image.rich_text[0].plain_text; // imgbb 를 통한 프로젝트별 image
-
-  //Project 별 Tag 데이터 보여주기
-  const project_Tag = tags.map((tag: ProjectInterface.Tag) => {
-    let textColorClass = "text-white";
-  // 밝은 색상 텍스트 색상을 검정색으로 설정
-  if (tag.color === "pink" || tag.color === "orange") {
-    textColorClass = "text-black";
-  }
+  const properties = data.properties;
+  const title = getPlainText(properties?.Project?.title) || "Untitled Project";
+  const tags = properties?.Tags?.multi_select ?? [];
+  const work = getPlainText(properties?.Work?.rich_text);
+  const date = getPlainText(properties?.Date?.rich_text);
+  const imgSrc = getPlainText(properties?.Image?.rich_text);
+  const workText = work
+    .split("-")
+    .map((item) => item.trim())
+    .filter(Boolean);
 
   return (
-    <Text key={tag.id} className={`text-center px-2 py-1 mr-1 rounded-md ${textColorClass}`} style={{ backgroundColor: tag.color }}>
-      {tag.name}
-    </Text>
-  );
-  });
-  
-  //workText - 을 기준으로 띄어쓰기
-  const workText = work.split("-")?.map((item: string, index: number) => (
-    <Box key={index} className="ml-2 mr-2">
-      <Text>{`${item.trim()}`}</Text>
+    <Box className="project-card">
+      <Card className="h-full bg-transparent shadow-none">
+        <CardBody className="flex h-full flex-col p-0">
+          <Box className="relative aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-slate-700">
+            {imgSrc ? (
+              <OptImg
+                src={imgSrc}
+                alt={`${title} project image`}
+                width={600}
+                height={450}
+                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
+                style={{ height: "100%", objectFit: "cover", width: "100%" }}
+              />
+            ) : (
+              <Box className="flex h-full w-full items-center justify-center px-4 text-center text-sm text-slate-300">
+                이미지 준비중
+              </Box>
+            )}
+          </Box>
+
+          <Box className="flex flex-1 flex-col p-4">
+            <Box className="space-y-2">
+              <Heading className="text-base font-semibold leading-snug sm:text-lg">
+                {title}
+              </Heading>
+              {date && (
+                <Text className="text-sm font-semibold text-slate-100">
+                  {date}
+                </Text>
+              )}
+            </Box>
+
+            {workText.length > 0 && (
+              <Box className="mt-4 space-y-2 text-sm leading-relaxed text-slate-300 sm:text-base">
+                {workText.map((item, index) => (
+                  <Text key={`${data.id}-work-${index}`}>{item}</Text>
+                ))}
+              </Box>
+            )}
+
+            {tags.length > 0 && (
+              <Box className="mt-auto flex flex-wrap justify-center gap-1.5 pt-5">
+                {tags.map((tag) => {
+                  const bgColor = tagColorMap[tag.color] ?? tag.color;
+                  const textColorClass = darkTextTagColors.has(tag.color)
+                    ? "text-black"
+                    : "text-white";
+
+                  return (
+                    <Text
+                      key={tag.id}
+                      className={`rounded px-2 py-1 text-xs font-semibold leading-none ${textColorClass}`}
+                      style={{ backgroundColor: bgColor }}
+                    >
+                      {tag.name}
+                    </Text>
+                  );
+                })}
+              </Box>
+            )}
+          </Box>
+        </CardBody>
+      </Card>
     </Box>
-  ));
-  
-
-  return (
-    <>
-      <Box className="project-card" mt="10%">
-        <Card className="flex flex-col sm:flex-row relative">
-          <CardBody className="flex flex-col h-full pb-8">
-            <OptImg
-              src={imgSrc}
-              alt="cover image"
-              className="rounded-xl"
-              width={600}
-              height={400}
-              priority
-            />
-            <Stack mt="auto" spacing="10">
-              <Heading className="text-base ml-2 mr-2">{title}</Heading>
-              <Heading className="text-md ml-2 mr-2">{date}</Heading>
-              <Box className="sm:text-xs md:text-base lg:text-lg xl:text-xl mb-10">{workText}</Box>
-              <Box className="flex flex-wrap justify-center fixed bottom-1 w-full mt-20 sm:mt-40 md:mt-36 lg:mt-30 xl:mt-24">{project_Tag}</Box>
-            </Stack>
-          </CardBody>
-        </Card>
-      </Box>
-    </>
   );
 };
 
