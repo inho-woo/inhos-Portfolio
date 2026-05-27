@@ -4,7 +4,6 @@ import CardItem from "./cardItem";
 import { ProjectInterface } from "./project";
 
 const MotionBox = motion(Box);
-const MotionHeading = motion(Heading);
 
 const gridVariants = {
   hidden: {},
@@ -26,15 +25,15 @@ const Project = ({ projects }: { projects: ProjectInterface.ProjectsResponse }) 
   if (projectItems.length === 0) return null;
   return (
     <Box className="section-container">
-      <MotionHeading
-        className="section-title mb-10"
+      <MotionBox
+        className="mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        Project
-      </MotionHeading>
+        <Heading className="section-title">Project</Heading>
+      </MotionBox>
       <MotionBox
         as={SimpleGrid}
         className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
